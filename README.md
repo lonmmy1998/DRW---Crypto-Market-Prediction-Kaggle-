@@ -30,8 +30,8 @@ All 9 modeling stages — including EDA, feature creation, PCA, and submission �
 | 8 | PCA on X-features |
 | 9 | Final Model Training & Submission |
 
-🔗 **Kaggle Notebook**: [View Full Pipeline on Kaggle](https://www.kaggle.com/competitions/drw-crypto-market-prediction)  
-📁 **GitHub Notebook**: [`drw-crypto-pipeline.ipynb`](./notebooks/drw-crypto-pipeline.ipynb)
+🔗 **Kaggle Notebook**: [View Full Pipeline on Kaggle](https://www.kaggle.com/code/lonmmylai/drw-crypto-pipeline)  
+📁 **GitHub File: [`drw-crypto-pipeline.ipynb`](./files/drw-crypto-pipeline.ipynb)
 
 
 <br>
