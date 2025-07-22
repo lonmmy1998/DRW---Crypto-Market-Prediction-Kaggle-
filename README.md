@@ -37,9 +37,22 @@ All 9 modeling stages — including EDA, feature creation, PCA, and submission �
 
 <br>
 
+
+## 🏁 Public Leaderboard Result
+
+ This notebook was submitted to the official DRW Crypto Market Prediction competition.
+
+- **Kaggle Username**: `Lonmmy Lai`
+- **Public Leaderboard Score**: `0.03224`
+- **Public Rank**: `#823` (first submission)
+
+> This submission marks the completion of my first full competition pipeline, from raw data to leaderboard entry.
+
+<br>
+
 ## 📈 Final Feature List
 
-We used a total of **17 final features**, combining custom logic and PCA components:
+ useing a total of **17 final features**, combining custom logic and PCA components:
 
 | Category | Features |
 |----------|----------|
@@ -75,7 +88,7 @@ We used a total of **17 final features**, combining custom logic and PCA compone
 - Use TimeSeriesSplit or walk-forward validation.
 - Try advanced architectures (e.g. Transformer or TabNet).
 
----
 
-This project demonstrates an effective pipeline for high-frequency financial prediction with interpretability and modeling best practices.
+
+## This project demonstrates an effective pipeline for high-frequency financial prediction with interpretability and modeling best practices.
 
