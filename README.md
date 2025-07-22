@@ -1,70 +1,80 @@
-# PCA + Custom Feature Engineering for Crypto Market Forecasting
+#  DRW Crypto Market Prediction (Kaggle)
 
-This notebook is my first submission to a [Kaggle Playground Competition](https://www.kaggle.com/competitions/drw-crypto-market-prediction), focused on predicting crypto market behavior. It highlights my practical skills in:
+This repository contains our complete end-to-end modeling pipeline for the [DRW Crypto Market Prediction](https://www.kaggle.com/competitions/drw-crypto-market-prediction) competition on Kaggle. The goal is to forecast short-term price movement of various cryptocurrencies using high-frequency market data.
 
-- Custom feature engineering (domain-informed)
-- Dimensionality reduction using PCA
-- LightGBM regression modeling
+custom feature engineering, time-based analysis, PCA dimensionality reduction, and final modeling with LightGBM.
 
-While the current result is a baseline, the notebook reflects my efforts to explore and apply effective preprocessing techniques.
+<br>
+
+## 📌 Project Overview
+
+- **Competition Goal**: Predict future crypto price movement using historical market data.
+- **Data Source**: `train.parquet` and `test.parquet` files provided by Kaggle.
+- **Key Approach**: EDA → Feature Engineering → Feature Selection → PCA → Modeling → Submission
+
+<br>
+
+## 📓 Notebook Summary
+
+All 9 modeling stages — including EDA, feature creation, PCA, and submission — are implemented in a **single Kaggle Notebook**.
+
+| Part | Description |
+|------|-------------|
+| 1 | Data Loading & Cleaning |
+| 2 | Baseline Modeling with LightGBM |
+| 3 | Custom Features & Domain Knowledge |
+| 4 | Integration of Anonymous Features |
+| 5 | Lag & Rolling Time Features |
+| 6 | Feature Importance Visualization |
+| 7 | Feature Selection by Importance |
+| 8 | PCA on X-features |
+| 9 | Final Model Training & Submission |
+
+🔗 **Kaggle Notebook**: [View Full Pipeline on Kaggle](https://www.kaggle.com/competitions/drw-crypto-market-prediction)  
+📁 **GitHub Notebook**: [`drw_crypto_pipeline.ipynb`](./notebooks/drw_crypto_pipeline.ipynb)
+
+
+<br>
+
+## 📈 Final Feature List
+
+We used a total of **17 final features**, combining custom logic and PCA components:
+
+| Category | Features |
+|----------|----------|
+| Ratio & Domain Features | `buy_ratio`, `spread`, `volume_change` |
+| Time-based Features | `buy_qty_lag_1`, `buy_qty_lag_5`, `buy_qty_lag_10`, `buy_qty_ma_3`, `buy_qty_ma_5`, `buy_qty_ma_10`, `buy_qty_ma_15`, `volume_lag_5`, `volume_ma_10` |
+| PCA Components | `PCA1`, `PCA2`, `PCA3`, `PCA4`, `PCA5` |
+
+> PCA was applied to the anonymized `X1 ~ X30` features after standardization.
+
+<br>
+
+## 📌 Key Insights
+
+- **Lag & Rolling mean features** helped capture market microstructure trends.
+- **Anonymous features (X1~X30)** were effectively reduced using PCA.
+- **Feature filtering based on LightGBM importance** removed noise and improved model consistency.
+- Final predictions were generated using a 17-feature LightGBM model.
+
+<br>
+
+## 📌 Final Submission
+
+- LightGBM trained on full dataset with 17 features.
+- Predictions generated on test set and saved as `submission.csv`.
+- Final result ready for submission to Kaggle.
+
+<br>
+
+## 📌 Future Work
+
+- Add `asset_id`-based segmentation or embeddings.
+- Apply SHAP for deeper interpretability.
+- Use TimeSeriesSplit or walk-forward validation.
+- Try advanced architectures (e.g. Transformer or TabNet).
 
 ---
 
-## 📁 Notebook Overview
-
-The core notebook includes:
-
-1. **Data Loading**
-   - Uses `polars` and `pandas` to efficiently load and manipulate large `.parquet` files.
-
-2. **Feature Engineering**
-   - Introduced custom features such as:
-     - `buy_ratio` = `buy_qty / (buy_qty + sell_qty)`
-     - `spread` = `ask_qty - bid_qty`
-     - `volume_change` = Percentage change of volume
-     - Multiple lag and rolling mean features
-
-3. **PCA Transformation**
-   - Applied PCA to `X1 ~ X30` anonymous features
-   - Retained the **top 5 principal components** for better model generalization
-
-4. **Model Training**
-   - Used `LightGBM Regressor` with time series split cross-validation
-   - Evaluated performance based on Pearson correlation
-
-5. **Submission**
-   - Generated a `.csv` submission compatible with the competition requirements
-
----
-
-##  Final Feature Set (17 features)
-
-| Category              | Features                                                                 |
-|-----------------------|--------------------------------------------------------------------------|
-| Custom Engineered     | `buy_ratio`, `spread`, `volume_change`                                   |
-| Lag & Rolling Stats   | `buy_qty_lag_1`, `buy_qty_lag_5`, `buy_qty_lag_10`, `buy_qty_ma_3`, `buy_qty_ma_5`, `buy_qty_ma_10`, `buy_qty_ma_15`, `volume_lag_5`, `volume_ma_10` |
-| PCA Components        | `PCA_1`, `PCA_2`, `PCA_3`, `PCA_4`, `PCA_5`                               |
-
----
-
-## Notes
-
-- The current score is preliminary and serves as a baseline.
-- This project focuses on demonstrating **data preprocessing and feature thinking**, not leaderboard performance.
-- Further steps may include:
-  - Time-aware rolling windows
-  - Ensemble models
-  - Feature selection or SHAP analysis
-
----
-
-## 🧑‍💻 About Me
-
-I am a graduate student transitioning into machine learning engineering. This is part of my portfolio to showcase hands-on skills in:
-
-- Feature engineering
-- Dimensionality reduction
-- Model evaluation and deployment
-
-➡️ Feel free to check out other ML projects on my GitHub!
+This project demonstrates an effective pipeline for high-frequency financial prediction with interpretability and modeling best practices.
 
