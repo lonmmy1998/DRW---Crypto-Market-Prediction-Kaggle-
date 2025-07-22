@@ -1,4 +1,4 @@
-# 🧠 PCA + Custom Feature Engineering for Crypto Market Forecasting
+# PCA + Custom Feature Engineering for Crypto Market Forecasting
 
 This notebook is my first submission to a [Kaggle Playground Competition](https://www.kaggle.com/competitions/playground-series-s4e7), focused on predicting crypto market behavior. It highlights my practical skills in:
 
@@ -37,7 +37,7 @@ The core notebook includes:
 
 ---
 
-## 🧩 Final Feature Set (17 features)
+##  Final Feature Set (17 features)
 
 | Category              | Features                                                                 |
 |-----------------------|--------------------------------------------------------------------------|
@@ -47,7 +47,7 @@ The core notebook includes:
 
 ---
 
-## 📌 Notes
+## Notes
 
 - The current score is preliminary and serves as a baseline.
 - This project focuses on demonstrating **data preprocessing and feature thinking**, not leaderboard performance.
