@@ -1,6 +1,6 @@
 # PCA + Custom Feature Engineering for Crypto Market Forecasting
 
-This notebook is my first submission to a [Kaggle Playground Competition](https://www.kaggle.com/competitions/playground-series-s4e7), focused on predicting crypto market behavior. It highlights my practical skills in:
+This notebook is my first submission to a [Kaggle Playground Competition](https://www.kaggle.com/competitions/drw-crypto-market-prediction), focused on predicting crypto market behavior. It highlights my practical skills in:
 
 - Custom feature engineering (domain-informed)
 - Dimensionality reduction using PCA
